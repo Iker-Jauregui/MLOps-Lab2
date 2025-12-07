@@ -13,7 +13,7 @@ def predict(image):
         _, img_encoded = cv2.imencode(".jpg", image)
         files = {"file": ("image.jpg", img_encoded.tobytes(), "image/jpeg")}
 
-        response = requests.post(API_URL, files=files, timeout=10)
+        response = requests.post(API_URL, files=files, timeout=60)
         response.raise_for_status()
         data = response.json()
         return data.get("predicted_class")
