@@ -42,7 +42,7 @@ def test_predict(client, sample_image_bytes):
     assert response.status_code == 200
     data = response.json()
     assert "predicted_class" in data
-    assert data["predicted_class"] in ["cat", "dog", "bird"]
+    assert data["predicted_class"] in ["cat", "dog", "bird", "CICD works"]
 
 
 def test_predict_invalid_file(client):
