@@ -58,7 +58,8 @@ def predict(image_path, class_names=None):
 
         # For Lab1: randomly select a class
         predicted_class = random.choice(class_names)
-        return "CICD works"
+        predicted_class = "CICD works"
+        return predicted_class
 
     except FileNotFoundError:
         raise
