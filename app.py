@@ -13,7 +13,7 @@ def predict(image):
         _, img_encoded = cv2.imencode(".jpg", image)
         files = {"file": ("image.jpg", img_encoded.tobytes(), "image/jpeg")}
 
-        response = requests.post(API_URL, files=files, timeout=60)
+        response = requests.post(f"{API_URL}/predict", files=files, timeout=60)
         response.raise_for_status()
         data = response.json()
         return data.get("predicted_class")
@@ -27,7 +27,7 @@ iface = gr.Interface(
     inputs=gr.Image(label="Upload Image", type="numpy", height=400),
     outputs=gr.Textbox(label="Predicted class"),
     title="Image class predictor with FastAPI and Gradio",
-    description="Interactive class predictor using the endpoint /prediction",
+    description="Interactive class predictor using the endpoint /predict",
 )
 
 # Launch the GUI
