@@ -18,7 +18,7 @@ def sample_image_path(tmp_path):
 
 def test_predict_with_file_path(sample_image_path):
     """Test predict function with file path."""
-    result = predict(sample_image_path, ['cat', 'dog'])
+    result = predict(sample_image_path, ['cat', 'dog', 'CICD works'])
     assert result in ['cat', 'dog']
 
 
@@ -26,7 +26,7 @@ def test_predict_with_pil_image():
     """Test predict function with PIL Image."""
     img = Image.new('RGB', (100, 100), color='green')
     result = predict(img, ['cat', 'dog', 'bird'])
-    assert result in ['cat', 'dog', 'bird']
+    assert result in ['cat', 'dog', 'bird'], 'CICD works'
 
 
 def test_predict_default_classes(sample_image_path):
