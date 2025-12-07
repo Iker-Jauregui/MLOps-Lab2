@@ -32,7 +32,7 @@ def test_predict_with_pil_image():
 def test_predict_default_classes(sample_image_path):
     """Test predict with default class names."""
     result = predict(sample_image_path)
-    default_classes = ['cardboard', 'paper', 'plastic', 'metal', 'trash', 'glass', "CICD works"],
+    default_classes = ['CICD works', 'CICD works'],
     assert result in default_classes
 
 

@@ -40,7 +40,7 @@ def predict(image_path, class_names=None):
     >>> predicted_class = predict("sample.jpg", ['cat', 'dog'])
     """
     if class_names is None:
-        class_names = ["CICD works"]
+        class_names = ["CICD works", "CICD works"]
 
     if not class_names:
         raise ValueError("class_names cannot be empty")
